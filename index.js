@@ -47,12 +47,11 @@ function weloveking() {
         'name': username.value,
         'offset': offset.value
     };
-    console.log('font: ' + fontsize.value);
-    console.log('offset: ' + offset.value);
-
     MaterialAvatar(document.getElementById('weloveking'), options);
-
 }
-$(window).bind('load', setTimeout(function () {
-    MaterialAvatar(document.getElementById('weloveking'), options);
-}, 1000));
+$(window).bind('load', function () {
+    setTimeout(function () {
+        MaterialAvatar(document.getElementById('weloveking'), options);
+    }, 1000)
+}
+);
