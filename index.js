@@ -47,8 +47,10 @@ function weloveking() {
         'name': username.value,
         'offset': offset.value
     };
-    console.log('font: '+fontsize.value);
-    console.log('offset: '+offset.value);
-    MaterialAvatar(document.getElementById('weloveking'), options);
+    console.log('font: ' + fontsize.value);
+    console.log('offset: ' + offset.value);
+    setTimeout(function () {
+        MaterialAvatar(document.getElementById('weloveking'), options);
+    }, 1000);
 }
 $(window).bind('load', weloveking());
