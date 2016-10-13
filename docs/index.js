@@ -31,9 +31,9 @@ username.onchange = render;
 offset.oninput = render;
 fontsize.oninput = render;
 download.onclick = function (e) {
-    //ga('Main.send', 'event', 'สร้างรูปเรารักในหลวง - Download', 'view', username.value);
+    ga('Main.send', 'event', 'สร้างรูปเรารักในหลวง - Download', 'view', username.value);
     this.href = document.getElementById('canvas').toDataURL();
-    this.download = 'We_Love_the_King.png';
+    this.download = username.value + '_Love_the_King.png';
 };
 var avatar;
 function weloveking() {
@@ -49,8 +49,10 @@ function weloveking() {
     };
     console.log('font: ' + fontsize.value);
     console.log('offset: ' + offset.value);
-    setTimeout(function () {
-        MaterialAvatar(document.getElementById('weloveking'), options);
-    }, 1000);
+
+    MaterialAvatar(document.getElementById('weloveking'), options);
+
 }
-$(window).bind('load', weloveking());
+$(window).bind('load', setTimeout(function () {
+    MaterialAvatar(document.getElementById('weloveking'), options);
+}, 1000));
