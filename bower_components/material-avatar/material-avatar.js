@@ -103,19 +103,14 @@
     } else {
       this._drawSquare();
     }
-    this._heart();
+
     this._salute();
     //Create the color and add our initials
-    this.context.font = 'normal 400 '+this.fontSize + 'px/1.3px ' + this.options.fontFamily;
-    this.context.textAlign = 'left';
+    this.context.font = 'normal 400 ' + (+this.fontSize) + 'px/1.3px ' + this.options.fontFamily;
+    this.context.textAlign = 'start';
+    this.context.textBaseline = 'alphabetic';
     this.context.fillStyle = this.getTextColor();
-    this.context.fillText(
-      this.initials,
-      // this.fontSize,
-      this.options.offset || 0,
-      (this.height / 2) + 8.2
-    );
-
+    this.context.fillText(this.initials, (+this.options.offset || 0), 310);
     //Remove the inner text and swap in the canvas elemnt
     this.element.innerHTML = '';
     this.element.appendChild(this.canvas);
@@ -138,42 +133,22 @@
     this.context.fillStyle = this.backgroundColor;
     this.context.fillRect(0, 0, this.width, this.height);
   };
-
-  Avatar.prototype._heart = function () {
+  Avatar.prototype._salute = function () {
     this.context.font = '120px FontAwesome';
     this.context.textAlign = 'center';
-    this.context.textBaseline = 'bottom';
     this.context.fillStyle = 'yellow';
-    this.context.fillText(
-      '\uf004',
-      (this.width / 2) - 8.2,
-      (this.height / 2) + 8.2
-    );
-    this.context.font = 'normal 400 82px/1.3px noworry';
+    this.context.fillText('\uf004', 292, 340);
+    this.context.font = 'normal 700 90px/1.3px noworry';
     this.context.fillStyle = '#f39bb2';
-    this.context.fillText(
-      'รัก',
-      (this.width / 2) - 8.2,
-      this.height / 2
-    );
-  };
-
-  Avatar.prototype._salute = function () {
+    this.context.fillText('รัก', 292, 310);
     this.context.font = 'normal 400 82px/1.3px noworry';
     this.context.textAlign = 'right';
+    this.context.textBaseline = 'alphabetic';
     this.context.fillStyle = this.getTextColor();
-    this.context.fillText(
-      ' ในหลวง',
-      this.width - 41,
-      (this.height / 2) + 8.2
-    );
+    this.context.fillText(' ในหลวง', 560, 310);
     this.context.font = 'normal 400 expanded 60px/1.35px noworry';
     this.context.textAlign = 'center';
-    this.context.fillText(
-      'ทรงพระเจริญ',
-      this.width / 2,
-      this.height - 48
-    );
+    this.context.fillText('ทรงพระเจริญ', 300, 550);
   };
   Avatar.prototype.getData = function () {
     this.name = this.options.name || this.element.getAttribute('data-name') || this.element.innerHTML.trim();
@@ -184,25 +159,25 @@
   };
   Avatar.prototype.getInitials = function () {
 
-      if (this.options.initials) {
-        return this.options.initials;
-      }
+    if (this.options.initials) {
+      return this.options.initials;
+    }
 
-      this.name = this.options.name || this.element.getAttribute('data-name') || this.element.innerHTML.trim();
-      var _nameSplit = this.name.split(' ');
-      var _initials;
+    this.name = this.options.name || this.element.getAttribute('data-name') || this.element.innerHTML.trim();
+    var _nameSplit = this.name.split(' ');
+    var _initials;
 
-      this.element.setAttribute('data-name', this.name);
+    this.element.setAttribute('data-name', this.name);
 
-      //Get initials from name
-      if (_nameSplit.length > 1) {
-        _initials = _nameSplit[0].charAt(0).toUpperCase() + _nameSplit[1].charAt(0).toUpperCase();
-      } else {
-        _initials = _nameSplit[0].charAt(0).toUpperCase();
-      }
+    //Get initials from name
+    if (_nameSplit.length > 1) {
+      _initials = _nameSplit[0].charAt(0).toUpperCase() + _nameSplit[1].charAt(0).toUpperCase();
+    } else {
+      _initials = _nameSplit[0].charAt(0).toUpperCase();
+    }
 
-      return _initials;
-    };
+    return _initials;
+  };
 
   Avatar.prototype.getFontSize = function () {
     if (this.options.fontSize) {
