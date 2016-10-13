@@ -1,0 +1,23 @@
+{
+  "name": "we_love_the_king_generator",
+  "version": "1.0.0",
+  "description": "We Love King Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dahoba/we_love_the_king_generator.git"
+  },
+  "keywords": [
+    "Thailand",
+    "King"
+  ],
+  "author": "Dahoba",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dahoba/we_love_the_king_generator/issues"
+  },
+  "homepage": "https://github.com/dahoba/we_love_the_king_generator#readme"
+}

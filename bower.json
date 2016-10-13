@@ -1,0 +1,27 @@
+{
+  "name": "we_love_the_king_generator",
+  "description": "We Love King Generator",
+  "main": "index.js",
+  "authors": [
+    "Dahoba"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Thailand",
+    "King"
+  ],
+  "homepage": "https://github.com/dahoba/we_love_the_king_generator",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-avatar": "dahoba/material-avatar#^0.3.1",
+    "jquery": "^3.1.1",
+    "font-awesome": "^4.6.3"
+  }
+}
